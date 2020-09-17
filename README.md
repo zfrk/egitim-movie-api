@@ -1,4 +1,7 @@
+# Node Movie API Egitim
+
 # Movies
+
 
 | Route | HTTP Verb | POST body | Description |
 | :-: | - | - | - |
@@ -12,6 +15,7 @@
 
 # Directors
 
+
 | Route | HTTP Verb | POST body | Description |
 | - | - | - | - |
 | /api/directors | `GET` | Empty | List all directors. |
@@ -23,8 +27,8 @@
 
 # Index
 
+
 | Route | HTTP Verb | POST body | Description |
 | - | - | - | - |
 | /register | `POST` | { username: 'foo', password:'1234' } | Create a new user. |
 | /authenticate | `POST` | { username: 'foo', password:'1234' } |   |
-
