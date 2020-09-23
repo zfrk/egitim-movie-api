@@ -1,0 +1,21 @@
+{
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "node": true,
+        "es6": true
+    },
+    "extends": [
+        "airbnb-base"
+      ],
+    "parserOptions": {
+        "ecmaVersion": 2018,
+        "ecmaFeatures": 
+        {
+            "impliedStrict":true             
+        }
+    },
+    "rules": {
+        "prefer-const":"error"
+    }
+}
