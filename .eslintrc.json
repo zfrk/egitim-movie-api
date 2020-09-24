@@ -25,6 +25,8 @@
     },
     "rules": {
         "prefer-const":"error",
-        "prettier/prettier": "error"
+        "prettier/prettier": "error",
+        "comma-dangle":"off",
+        "no-console":"off"
     }
 }
