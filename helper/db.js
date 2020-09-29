@@ -7,6 +7,7 @@ module.exports = () => {
       { useNewUrlParser: true, useUnifiedTopology: true }
     )
     .then(() => {
+      mongoose.set('useFindAndModify', false);
       console.log('MongoDB Connected1');
     })
     .catch((err) => console.log(`MongoDB Error1 ${err}`));
