@@ -1,5 +1,6 @@
 // eslint-disable-next-line import/newline-after-import
 const express = require('express');
+
 const router = express.Router();
 
 // Models
@@ -9,7 +10,20 @@ const Movies = require('../models/Movies');
 
 // eslint-disable-next-line no-unused-vars
 router.get('/', (req, res, next) => {
-  const promise = Movies.find();
+  const promise = Movies.aggregate([
+    {
+      $lookup: {
+        from: 'directors',
+        localField: 'directory_id',
+        foreignField: '_id',
+        as: 'director',
+      },
+    },
+    {
+      $unwind: '$director',
+    },
+  ]);
+
   promise
     .then((data) => {
       res.json(data);
