@@ -48,6 +48,7 @@ router.get('/:director_id', (req, res, next) => {
         _id: '$_id._id',
         name: '$_id.name',
         surname: '$_id.surname',
+        bio: '$_id.bio',
         movies: '$movies',
       },
     },
@@ -121,6 +122,29 @@ router.get('/', (req, res, next) => {
     .catch((err) => {
       console.log(err);
       res.data(err);
+    });
+});
+
+router.put('/:director_id', (req, res, next) => {
+  const promise = Directors.findByIdAndUpdate(
+    req.params.director_id,
+    req.body,
+    {
+      new: true,
+    }
+  );
+
+  promise
+    .then((director) => {
+      if (!director) {
+        next({
+          message: 'There is no directory for update ',
+          code: 22,
+        });
+      } else res.json(director);
+    })
+    .catch((err) => {
+      res.json(err);
     });
 });
 
