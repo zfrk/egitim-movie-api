@@ -15,6 +15,16 @@ const app = express();
 // eslint-disable-next-line no-unused-vars
 const db = require('./helper/db')();
 
+// Config
+
+const config = require('./config');
+
+// Middeleware
+
+const verifyToken = require('./middleware/verify-token');
+
+app.set('api_secret_key', config.api_secret_key);
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
@@ -26,6 +36,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+app.use('/api', verifyToken);
 app.use('/api/movies', moviesRouter);
 app.use('/api/directors', directorsRouter);
 
