@@ -7,3 +7,4 @@ before_install:
     - export NODE_ENV=dev
 stricpt:
     - npm run test
+    - npm run lint 
