@@ -7,10 +7,11 @@ const server = require('../app');
 chai.use(chaiHttp);
 
 describe('Node Server', () => {
-  it('(GET /) anasayfay¹ döndürür', (done) => {
-    chai.request(server)
+  it('(GET /) MainPage Running', (done) => {
+    chai
+      .request(server)
       .get('/')
-      .end((err,res) => {
+      .end((err, res) => {
         res.should.have.status(200);
         done();
       });
