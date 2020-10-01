@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "start": "nodemon ./bin/www",
+    "test": "mocha --exit --recursive",
     "lint": "eslint",
     "kill": "npx kill-port 3000"
   },
@@ -13,17 +14,21 @@
     "debug": "~2.6.9",
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
-    "jade": "~1.11.0",
+    "jade": "^1.11.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.10.6",
-    "morgan": "~1.9.1"
+    "morgan": "~1.9.1",
+    "pug": "^3.0.0"
   },
   "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
     "eslint": "^7.9.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-import": "^2.21.2",
     "eslint-plugin-prettier": "^3.1.4",
+    "mocha": "^8.1.3",
     "nodemon": "^2.0.4",
     "prettier": "^2.1.2"
   }
