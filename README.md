@@ -1,8 +1,9 @@
-[![Build Status]]
+[![Build Status](https://api.travis-ci.com/zfrk/egitim-movie-api.svg?branch=master)](https://travis-ci.com/github/zfrk/egitim-movie-api)
 
 # Node Movie API Egitim
 
 # Movies
+
 
 | Route | HTTP Verb | POST body | Description |
 | :-: | - | - | - |
@@ -16,6 +17,7 @@
 
 # Directors
 
+
 | Route | HTTP Verb | POST body | Description |
 | - | - | - | - |
 | /api/directors | `GET` | Empty | List all directors. |
@@ -27,8 +29,8 @@
 
 # Index
 
+
 | Route | HTTP Verb | POST body | Description |
 | - | - | - | - |
 | /register | `POST` | { username: 'foo', password:'1234' } | Create a new user. |
 | /authenticate | `POST` | { username: 'foo', password:'1234' } |   |
-
